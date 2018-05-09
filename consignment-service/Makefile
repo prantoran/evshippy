@@ -1,6 +1,6 @@
 build:
 	protoc -I. --go_out=plugins=micro:$(GOPATH)/src/github.com/prantoran/evshippy/consignment-service \
-	  proto/consignment/consignment.proto
+		proto/consignment/consignment.proto
 	# GOOS=linux GOARCH=amd64 go build
 	docker build -t consignment-service .
 run:
