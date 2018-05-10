@@ -1,4 +1,4 @@
-### tutorial: https://ewanvalentine.io/microservices-in-golang-part-1/
+### Followed **Ewan Valentine**'s [tutorials](https://ewanvalentine.io/microservices-in-golang-part-1)
 ### part 1
 - make proto
     - $ cd consignment-service/ && make build 
@@ -12,3 +12,13 @@
 or 
 
 `docker-compose up`
+
+### part 3
+- executing user-cli
+```
+docker-compose run user-cli command \
+  --name="Ewan Valentine" \
+  --email="ewan.valentine89@gmail.com" \
+  --password="Testing123" \
+  --company="BBC"
+```

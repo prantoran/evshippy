@@ -8,6 +8,13 @@ services:
       MICRO_REGISTRY: "mdns"
     depends_on:
       - consignment-service
+  
+  user-cli:
+    build: ./user-cli
+    environment:
+      MICRO_REGISTRY: "mdns"
+    depends_on:
+      - user-service
 
   consignment-service:
     build: ./consignment-service
@@ -58,3 +65,4 @@ services:
       POSTGRES_DB: "users"
       POSTGRES_USER: "pinku"
       POSTGRES_PASSWORD: "a1"
+  
