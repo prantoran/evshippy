@@ -4,6 +4,6 @@ RUN mkdir -p /app
 WORKDIR /app
 
 ADD consignment.json /app/consignment.json
-ADD consignment-cli /app/consignment-cli
+ADD consignment-cli /app/cli
 
-CMD ["./consignment-cli"]
+CMD ["./cli"]
