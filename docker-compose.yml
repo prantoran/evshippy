@@ -38,10 +38,10 @@ services:
     depends_on:
       - datastore
 
-    datastore:
-      image: mongo
-      ports:
-        - 27017:27017
+  datastore:
+    image: mongo
+    ports:
+      - 27017:27017
 
   user-service:
     build: ./user-service
@@ -62,8 +62,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: "users"
-      POSTGRES_USER: "pinku"
-      POSTGRES_PASSWORD: "a1"
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
 
-      
