@@ -8,7 +8,7 @@ services:
       MICRO_REGISTRY: "mdns"
     depends_on:
       - consignment-service
-  
+
   user-cli:
     build: ./user-cli
     environment:
@@ -38,11 +38,11 @@ services:
     depends_on:
       - datastore
 
-  datastore:
-    image: mongo
-    ports:
-      - 27017:27017
-  
+    datastore:
+      image: mongo
+      ports:
+        - 27017:27017
+
   user-service:
     build: ./user-service
     ports:
@@ -51,12 +51,12 @@ services:
       MICRO_ADDRESS: ":50051"
       MICRO_REGISTRY: "mdns"
       DB_HOST: "database"
-      DB_USER: "pinku"
-      DB_NAME: "users"
-      DB_PASSWORD: "a1"
-    depends_on:
-      - database
+      DB_USER: "postgres"
+      DB_NAME: "postgres"
+      DB_PASSWORD: "postgres"
+      DB_PORT: "5432"
 
+  
   database:
     image: postgres
     ports:
@@ -65,4 +65,5 @@ services:
       POSTGRES_DB: "users"
       POSTGRES_USER: "pinku"
       POSTGRES_PASSWORD: "a1"
-  
+
+      
